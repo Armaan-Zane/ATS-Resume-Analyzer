@@ -20,58 +20,60 @@ This project demonstrates **backend engineering, applied NLP, and full-stack dev
 
 ## 🧠 How the ATS Scoring Works
 
-The final ATS score is calculated using a **weighted scoring model**, inspired by real ATS systems:
+The final ATS score is calculated using a **weighted scoring model**, inspired by real ATS systems.
 
 ### 🔢 Scoring Breakdown
 
-- **Exact Skill Match (50%)**
-  - Matches resume skills against a predefined skill database
-- **Semantic Similarity (30%)**
-  - Uses NLP sentence embeddings to compare the meaning of the resume and job description
-- **Keyword Density & Relevance (20%)**
-  - Measures presence of relevant, role-specific terms
+- **Exact Skill Match (50%)**  
+  Matches resume skills against a predefined skill database
+
+- **Semantic Similarity (30%)**  
+  Uses NLP sentence embeddings to compare the meaning of the resume and job description
+
+- **Keyword Density & Relevance (20%)**  
+  Measures presence of relevant, role-specific terms
 
 ### ✅ Final Score Formula
 
+```
 ATS Score =
 (Exact Skill Match × 0.5)
-
-(Semantic Similarity × 0.3)
-
-(Keyword Relevance × 0.2)
-
-This approach balances **precision (keywords)** and **context (semantic meaning)**, similar to modern ATS pipelines.
++ (Semantic Similarity × 0.3)
++ (Keyword Relevance × 0.2)
+```
 
 ---
 
 ## 🛠️ Tech Stack
 
 - **Python**
-- **FastAPI** – backend framework
-- **spaCy** – NLP processing
-- **Sentence Transformers** – semantic similarity
-- **Jinja2** – HTML templating
-- **PyMuPDF** – PDF text extraction
-- **HTML & CSS** – frontend UI
+- **FastAPI**
+- **spaCy**
+- **Sentence Transformers**
+- **Jinja2**
+- **PyMuPDF**
+- **HTML & CSS**
 
 ---
 
 ## 📂 Project Structure
 
+```
 ATS_Resume_Analyzer
 ├── app
-│ ├── init.py
-│ ├── main.py
-│ ├── resume_parser.py
-│ ├── jd_parser.py
-│ └── scorer.py
+│   ├── __init__.py
+│   ├── main.py
+│   ├── resume_parser.py
+│   ├── jd_parser.py
+│   └── scorer.py
 ├── data
-│ └── skills.txt
+│   └── skills.txt
 ├── templates
-│ └── index.html
+│   └── index.html
 ├── requirements.txt
 ├── .gitignore
 └── README.md
+```
 
 ---
 
@@ -81,21 +83,32 @@ ATS_Resume_Analyzer
 ```bash
 git clone https://github.com/<your-username>/ATS-Resume-Analyzer.git
 cd ATS-Resume-Analyzer
+```
 
-2️⃣ Create and Activate Virtual Environment
+### 2️⃣ Create and Activate Virtual Environment
+```bash
 python -m venv venv
 venv\Scripts\activate
+```
 
-3️⃣ Install Dependencies
+### 3️⃣ Install Dependencies
+```bash
 pip install -r requirements.txt
+```
 
-4️⃣ Run the Application
+### 4️⃣ Run the Application
+```bash
 python -m uvicorn app.main:app --reload
+```
 
-5️⃣ Open in Browser
+### 5️⃣ Open in Browser
+```
 http://127.0.0.1:8000
+```
 
-📈 Example Output
+---
+
+## 📈 Example Output
 
 ATS Score: 72 / 100
 
@@ -103,7 +116,9 @@ Matched Skills: Python, SQL, Git
 
 Missing Skills: Docker, AWS, REST APIs
 
-🎯 Use Cases
+---
+
+## 🎯 Use Cases
 
 Resume optimization for job applications
 
@@ -113,16 +128,17 @@ Comparing resumes against different job roles
 
 Interview preparation and skill gap analysis
 
-🚀 Deployment
+---
+
+## 🚀 Deployment
 
 The application can be deployed on platforms like Render or Railway using the following start command:
 
 uvicorn app.main:app --host 0.0.0.0 --port 10000
 
+---
 
-Once deployed, the app is accessible via a public URL.
-
-👤 Author
+## 👤 Author
 
 This project was built to demonstrate:
 
@@ -133,3 +149,4 @@ Applied Natural Language Processing
 System design thinking
 
 End-to-end project deployment
+---
