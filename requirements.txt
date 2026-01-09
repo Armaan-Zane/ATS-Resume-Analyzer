@@ -5,3 +5,4 @@ PyMuPDF
 spacy
 sentence-transformers
 scikit-learn
+gunicorn
